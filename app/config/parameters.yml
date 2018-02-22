@@ -1,0 +1,17 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: Commercial
+    database_user: user1
+    database_password: 123
+    mailer_transport: smtp
+    mailer_host: smtp.gmail.com
+    mailer_user: symfonytest123@gmail.com
+    mailer_password: symfonyTest123?
+    secret: 409886b7acd612b9607857f88b54b3177806447e
+twig:
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    form_themes:
+        - bootstrap_3_layout.html.twig
