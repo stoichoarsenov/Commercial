@@ -152,7 +152,7 @@
             </trans-unit>
             <trans-unit id="41">
                 <source>This value is already used.</source>
-                <target>Стойността вече е в употреба.</target>
+                <target>Стойността вече е заета.</target>
             </trans-unit>
             <trans-unit id="42">
                 <source>The size of the image could not be detected.</source>
@@ -314,6 +314,32 @@
                 <source>This is not a valid Business Identifier Code (BIC).</source>
                 <target>Невалиден бизнес идентификационен код (BIC).</target>
             </trans-unit>
+            <trans-unit id="82">
+                <source>Product name must be at least {{ limit }} characters long.</source>
+                <target>Името на продукта трябва да бъде поне {{ limit }} символа.</target>
+            </trans-unit>
+            <trans-unit id="83">
+                <source>Product name cannot be longer than {{ limit }} characters.</source>
+                <target>Името на продукта не трябва да бъде повече от {{ limit }} символа.</target>
+            </trans-unit>
+
+            <trans-unit id="product_description_error">
+                <source>Product description must be at least {{ limit }} characters long.</source>
+                <target>Описанието на продукта трябва да е поне {{ limit }} символа</target>
+            </trans-unit>
+
+            <trans-unit id="product_description_error_2">
+                <source>Product description cannot be longer than {{ limit }} characters.</source>
+                <target>Описанието на продукта не трябва да съдържа повече от {{ limit }} символа</target>
+            </trans-unit>
+
+            <trans-unit id="please_upload_image">
+                <source>Please, upload the product image.</source>
+                <target>Моля добавете изображение</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>
+
+

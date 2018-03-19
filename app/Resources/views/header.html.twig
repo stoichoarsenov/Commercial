@@ -18,9 +18,9 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     {% if currentPath == '/' %}
-                    <li class="active"><a href="/">{{ "layout.home"| trans({}, 'FOSUserBundle') }}</a></li>
+                        <li class="active"><a href="/">{{ "layout.home"| trans({}, 'FOSUserBundle') }}</a></li>
                     {% else %}
-                    <li><a href="/">{{ "layout.home"| trans({}, 'FOSUserBundle') }}</a></li>
+                        <li><a href="/">{{ "layout.home"| trans({}, 'FOSUserBundle') }}</a></li>
                     {% endif %}
                     {% if is_granted("ROLE_ADMIN") %}
                         {% if 'admin' in app.request.get('_route') %}
@@ -33,9 +33,27 @@
                                     <span class="glyphicon glyphicon-wrench"></span> Admin Panel</a></li>
                         {% endif %}
                     {% endif %}
+                    {% if is_granted("ROLE_ADMIN") %}
+                        {% if 'newProduct' in app.request.get('_route') %}
+                            <li class="active">
+                                <a href="" data-toggle="dropdown">Product</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href={{ path('newProduct') }}>New Product</a></li>
+                                    <li><a href="#">Edit product</a></li>
+                                    <li><a href="#">Show product</a></li>
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li>
+                                <a href="" data-toggle="dropdown">Product</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href={{ path('newProduct') }}>New Product</a></li>
+                                    <li><a href="#">Edit product</a></li>
+                                    <li><a href="#">Show product</a></li>
+                                </ul>
+                            </li>
+                        {% endif %}{% endif %}
                 </ul>
-
-
                 <ul class="nav navbar-nav navbar-right">
                     {% if is_granted("ROLE_USER") %}
                         <li class="active">
@@ -91,73 +109,77 @@
 {% endblock %}
 {% block footer %}
     <div class="footer">
-    <footer class="fixed-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2 col-sm-6 footer-col">
-                    <div class="logofooter"> Logo</div>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                        galley.</p>
-                    <p><i class="fa fa-map-pin"></i> #228, Tiruvannamalai, Tamilnadu, India</p>
-                    <p><i class="fa fa-phone"></i> Phone (India) : +91 9999 999 999</p>
-                    <p><i class="fa fa-envelope"></i> E-mail : info@prabuuideveloper.com</p>
+        <footer class="fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 col-sm-6 footer-col">
+                        <div class="logofooter"> Logo</div>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been
+                            the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley.</p>
+                        <p><i class="fa fa-map-pin"></i> #228, Tiruvannamalai, Tamilnadu, India</p>
+                        <p><i class="fa fa-phone"></i> Phone (India) : +91 9999 999 999</p>
+                        <p><i class="fa fa-envelope"></i> E-mail : info@prabuuideveloper.com</p>
 
-                </div>
-                <div class="col-md-3 col-sm-6 footer-col">
-                    <h6 class="heading7">GENERAL LINKS</h6>
-                    <ul class="footer-ul">
-                        <li><a href="#"> Career</a></li>
-                        <li><a href="#"> Privacy Policy</a></li>
-                        <li><a href="#"> Terms & Conditions</a></li>
-                        <li><a href="#"> Client Gateway</a></li>
-                        <li><a href="#"> Ranking</a></li>
-                        <li><a href="#"> Case Studies</a></li>
-                        <li><a href="#"> Frequently Ask Questions</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 col-sm-6 footer-col">
-                    <h6 class="heading7">LATEST POST</h6>
-                    <div class="post">
-                        <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span>
-                        </p>
-                        <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span>
-                        </p>
-                        <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span>
-                        </p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 footer-col">
+                        <h6 class="heading7">GENERAL LINKS</h6>
+                        <ul class="footer-ul">
+                            <li><a href="#"> Career</a></li>
+                            <li><a href="#"> Privacy Policy</a></li>
+                            <li><a href="#"> Terms & Conditions</a></li>
+                            <li><a href="#"> Client Gateway</a></li>
+                            <li><a href="#"> Ranking</a></li>
+                            <li><a href="#"> Case Studies</a></li>
+                            <li><a href="#"> Frequently Ask Questions</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6 footer-col">
+                        <h6 class="heading7">LATEST POST</h6>
+                        <div class="post">
+                            <p>facebook crack the movie advertisment code:what it means for you
+                                <span>August 3,2015</span>
+                            </p>
+                            <p>facebook crack the movie advertisment code:what it means for you
+                                <span>August 3,2015</span>
+                            </p>
+                            <p>facebook crack the movie advertisment code:what it means for you
+                                <span>August 3,2015</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 footer-col">
+                        <h6 class="heading7">Social Media</h6>
+                        <ul class="footer-social">
+                            <li><i class="fa fa-linkedin social-icon linked-in" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-facebook social-icon facebook" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-twitter social-icon twitter" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-google-plus social-icon google" aria-hidden="true"></i></li>
+
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-2 col-sm-6 footer-col">
-                    <h6 class="heading7">Social Media</h6>
-                    <ul class="footer-social">
-                        <li><i class="fa fa-linkedin social-icon linked-in" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-facebook social-icon facebook" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-twitter social-icon twitter" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-google-plus social-icon google" aria-hidden="true"></i></li>
+            </div>
 
-                    </ul>
+            <div class="copyright">
+                <div class="container">
+                    <div class="col-md-3">
+                        <p>© 2017- All Rights Reserved</p>
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="bottom_ul">
+                            <li><a href="#">prabuuideveloper.com</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Faq's</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Site Map</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="copyright">
-            <div class="container">
-                <div class="col-md-3">
-                    <p>© 2017- All Rights Reserved</p>
-                </div>
-                <div class="col-md-8">
-                    <ul class="bottom_ul">
-                        <li><a href="#">prabuuideveloper.com</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Faq's</a></li>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Site Map</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+        </footer>
     </div>
     <!--footer start from here-->
 

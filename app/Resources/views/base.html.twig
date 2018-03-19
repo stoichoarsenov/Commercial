@@ -6,6 +6,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=qj8kon1tfr06xa9wkmn5zbpz00twk16xp6156myjoqo665s1"></script>
+    <script type="text/javascript">
+        tinymce.init({
+            branding: false,
+            selector: 'textarea'
+        });
+    </script>
 
     <style>
 
@@ -56,6 +63,26 @@
             .checkbox {
                 margin-top: 15%;
             }
+        }
+
+        .btn-file {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-file input[type=file] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 100px;
+            text-align: right;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            outline: none;
+            background: white;
+            cursor: inherit;
+            display: block;
         }
 
         .copyright {
@@ -128,7 +155,12 @@
     </style>
 
 
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>
+        {% if page_title is defined %}
+            {{ page_title }}
+        {% endif %}
+    </title>
+
     {% block stylesheets %}
 
     {% endblock %}

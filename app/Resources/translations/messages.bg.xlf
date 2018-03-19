@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+
+            <trans-unit id="laptops">
+                <source>Laptops</source>
+                <target>Лаптопи</target>
+            </trans-unit>
+
+            <trans-unit id="yes">
+                <source>Yes</source>
+                <target>Да</target>
+            </trans-unit>
+
+            <trans-unit id="product_name">
+                <source>Insert product name</source>
+                <target>Въведете името на продукта</target>
+            </trans-unit>
+
+            <trans-unit id="product_description">
+                <source>Insert product description</source>
+                <target>Въведете описание на продукта</target>
+            </trans-unit>
+
+            <trans-unit id="product_price">
+                <source>Insert product price</source>
+                <target>Въведете цената на продукта</target>
+            </trans-unit>
+
+            <trans-unit id="create_product">
+                <source>Create Product</source>
+                <target>Създай нов запис </target>
+            </trans-unit>
+
+            <trans-unit id="reset_product">
+                <source>Reset Product</source>
+                <target>Изчисти</target>
+            </trans-unit>
+
+            <trans-unit id="bought_price_product">
+                <source>Insert product price when bought</source>
+                <target>Въведи цена на продукта при закупуване</target>
+            </trans-unit>
+
+            <trans-unit id="quantity_product">
+                <source>Insert product quantity</source>
+                <target>Въведете количество на продуктите</target>
+            </trans-unit>
+
+            <trans-unit id="category_product">
+                <source>Product category</source>
+                <target>Въведи категория на продукта</target>
+            </trans-unit>
+
+            <trans-unit id="product_added_by">
+                <source>Product is added by</source>
+                <target>Продуктът е въведен от</target>
+            </trans-unit>
+
+            <trans-unit id="date_added_product">
+                <source>Date added</source>
+                <target>Дата на добавяне</target>
+            </trans-unit>
+
+            <trans-unit id="product_registred">
+                <source>Your name has already been registered</source>
+                <target>Съществува продукт със същото име</target>
+            </trans-unit>
+
+            <trans-unit id="laptop_accessories">
+                <source>Laptop accessories</source>
+                <target>Аксесоари за лаптоп</target>
+            </trans-unit>
+
+            <trans-unit id="laptop_bags">
+                <source>Laptop bags</source>
+                <target>Чанти за лаптоп</target>
+            </trans-unit>
+
+            <trans-unit id="laptop_cooler">
+                <source>Laptop cooler</source>
+                <target>Охалдители за лаптоп</target>
+            </trans-unit>
+
+            <trans-unit id="computer_cables">
+                <source>Computer cables</source>
+                <target>Компютърни лаптопи</target>
+            </trans-unit>
+
+            <trans-unit id="computer_peripherals">
+                <source>Computer peripherals</source>
+                <target>Компютърна периферия</target>
+            </trans-unit>
+
+            <trans-unit id="mouse_pads">
+                <source>Mouses and pads</source>
+                <target>Мишки и подложки</target>
+            </trans-unit>
+
+            <trans-unit id="PC_speakers">
+                <source>PC speakers</source>
+                <target>Говорители</target>
+            </trans-unit>
+
+            <trans-unit id="PC_headphones">
+                <source>PC headphones</source>
+                <target>Слушалки</target>
+            </trans-unit>
+
+            <trans-unit id="switch">
+                <source>Swtich</source>
+                <target>Суич</target>
+            </trans-unit>
+
+            <trans-unit id="routes">
+                <source>Routers</source>
+                <target>Рутери</target>
+            </trans-unit>
+
+            <trans-unit id="keyboards">
+                <source>Keyboards</source>
+                <target>Клавиатури</target>
+            </trans-unit>
+
+            <trans-unit id="HDD_and_USB_flash_drives">
+                <source>HDD and USB flash drives</source>
+                <target>HDD and USB flash drives</target>
+            </trans-unit>
+
+            <trans-unit id="USB_flash_drives">
+                <source>USB Flash drives</source>
+                <target>USB Flash drives</target>
+            </trans-unit>
+
+            <trans-unit id="external_HDD">
+                <source>External HDD</source>
+                <target>Външни HDD</target>
+            </trans-unit>
+
+            <trans-unit id="discs">
+                <source>Discs</source>
+                <target>Дискове</target>
+            </trans-unit>
+
+            <trans-unit id="card_readers_and_USB_hubs">
+                <source>Card readers and USB Hubs</source>
+                <target>Четци за карти и USB Hub</target>
+            </trans-unit>
+
+            <trans-unit id="computers">
+                <source>Computers</source>
+                <target>Компютри</target>
+            </trans-unit>
+
+            <trans-unit id="web_cameras">
+                <source>Web cameras</source>
+                <target>Уеб камери</target>
+            </trans-unit>
+
+            <trans-unit id="add_new_product">
+                <source>Add new product</source>
+                <target>Добави нов продукт</target>
+            </trans-unit>
+
+            <trans-unit id="Image">
+                <source>Image</source>
+                <target>Изображение</target>
+            </trans-unit>
+
+            <trans-unit id="please_upload_image">
+                <source>Please, upload the product image.</source>
+                <target>Моля добавете изображение</target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>

@@ -16,6 +16,7 @@
       <parameter key="SwiftmailerBundle">Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
+      <parameter key="StfalconTinymceBundle">Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="AsseticBundle">Symfony\Bundle\AsseticBundle\AsseticBundle</parameter>
       <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
@@ -61,6 +62,11 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">/var/www/html/Commercial/vendor/sensio/framework-extra-bundle</parameter>
         <parameter key="namespace">Sensio\Bundle\FrameworkExtraBundle</parameter>
+      </parameter>
+      <parameter key="StfalconTinymceBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/var/www/html/Commercial/vendor/stfalcon/tinymce-bundle/Stfalcon/Bundle/TinymceBundle</parameter>
+        <parameter key="namespace">Stfalcon\Bundle\TinymceBundle</parameter>
       </parameter>
       <parameter key="AppBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -121,6 +127,7 @@
     <parameter key="mailer_password">symfonyTest123?</parameter>
     <parameter key="secret">409886b7acd612b9607857f88b54b3177806447e</parameter>
     <parameter key="locale">bg</parameter>
+    <parameter key="image_directory">/var/www/html/Commercial/web/uploads/images</parameter>
     <parameter key="fragment.renderer.hinclude.global_template">null</parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">409886b7acd612b9607857f88b54b3177806447e</parameter>
@@ -358,16 +365,32 @@
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.proxy_dir">/var/www/html/Commercial/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
-    <parameter key="sensio_framework_extra.view.guesser.class">Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser</parameter>
-    <parameter key="sensio_framework_extra.controller.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener</parameter>
-    <parameter key="sensio_framework_extra.routing.loader.annot_dir.class">Symfony\Component\Routing\Loader\AnnotationDirectoryLoader</parameter>
-    <parameter key="sensio_framework_extra.routing.loader.annot_file.class">Symfony\Component\Routing\Loader\AnnotationFileLoader</parameter>
-    <parameter key="sensio_framework_extra.routing.loader.annot_class.class">Sensio\Bundle\FrameworkExtraBundle\Routing\AnnotatedRouteControllerLoader</parameter>
-    <parameter key="sensio_framework_extra.converter.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener</parameter>
-    <parameter key="sensio_framework_extra.converter.manager.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\ParamConverterManager</parameter>
-    <parameter key="sensio_framework_extra.converter.doctrine.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter</parameter>
-    <parameter key="sensio_framework_extra.converter.datetime.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter</parameter>
-    <parameter key="sensio_framework_extra.view.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener</parameter>
+    <parameter key="stfalcon_tinymce.config" type="collection">
+      <parameter key="include_jquery">false</parameter>
+      <parameter key="tinymce_jquery">false</parameter>
+      <parameter key="use_callback_tinymce_init">false</parameter>
+      <parameter key="selector">.tinymce</parameter>
+      <parameter key="language">null</parameter>
+      <parameter key="theme" type="collection">
+        <parameter key="advanced" type="collection">
+          <parameter key="theme">modern</parameter>
+          <parameter key="plugins" type="collection">
+            <parameter>advlist autolink lists link image charmap print preview hr anchor pagebreak</parameter>
+            <parameter>searchreplace wordcount visualblocks visualchars code fullscreen</parameter>
+            <parameter>insertdatetime media nonbreaking save table contextmenu directionality</parameter>
+            <parameter>emoticons template paste textcolor</parameter>
+          </parameter>
+          <parameter key="toolbar1">undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify
+                                   | bullist numlist outdent indent | link image</parameter>
+          <parameter key="toolbar2">print preview media | forecolor backcolor emoticons</parameter>
+          <parameter key="image_advtab">true</parameter>
+        </parameter>
+        <parameter key="simple" type="collection"/>
+      </parameter>
+      <parameter key="tinymce_buttons" type="collection"/>
+      <parameter key="external_plugins" type="collection"/>
+    </parameter>
+    <parameter key="stfalcon_tinymce.twig.extension.class">Stfalcon\Bundle\TinymceBundle\Twig\Extension\StfalconTinymceExtension</parameter>
     <parameter key="assetic.asset_factory.class">Symfony\Bundle\AsseticBundle\Factory\AssetFactory</parameter>
     <parameter key="assetic.asset_manager.class">Assetic\Factory\LazyAssetManager</parameter>
     <parameter key="assetic.asset_manager_cache_warmer.class">Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer</parameter>
@@ -391,6 +414,7 @@
       <parameter>SwiftmailerBundle</parameter>
       <parameter>DoctrineBundle</parameter>
       <parameter>SensioFrameworkExtraBundle</parameter>
+      <parameter>StfalconTinymceBundle</parameter>
       <parameter>AppBundle</parameter>
       <parameter>AsseticBundle</parameter>
       <parameter>DoctrineFixturesBundle</parameter>
@@ -656,6 +680,9 @@
     <service id="AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
+    <service id="AppBundle\Controller\NewProductController" class="AppBundle\Controller\NewProductController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
     <service id="AppBundle\DataFixtures\ORM\LoadUser" class="AppBundle\DataFixtures\ORM\LoadUser" public="false" autowire="true" autoconfigure="true"/>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
@@ -673,7 +700,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.sr6ctxe"/>
+      <argument type="service" id="service_locator.km4ot4q"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -1526,6 +1553,7 @@
             <argument>/var/www/html/Commercial/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.bg.xlf</argument>
             <argument>/var/www/html/Commercial/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.bg.yml</argument>
             <argument>/var/www/html/Commercial/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.bg.yml</argument>
+            <argument>/var/www/html/Commercial/app/Resources/translations/messages.bg.xlf</argument>
           </argument>
           <argument key="ca" type="collection">
             <argument>/var/www/html/Commercial/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ca.xlf</argument>
@@ -1843,7 +1871,7 @@
       </call>
       <call method="setFallbackLocales">
         <argument type="collection">
-          <argument>bg</argument>
+          <argument>en</argument>
         </argument>
       </call>
     </service>
@@ -2632,10 +2660,18 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
-        <argument>kernel.controller</argument>
+        <argument>kernel.controller_arguments</argument>
         <argument type="collection">
           <argument type="service" id="sensio_framework_extra.security.listener"/>
-          <argument>onKernelController</argument>
+          <argument>onKernelControllerArguments</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.controller_arguments</argument>
+        <argument type="collection">
+          <argument type="service" id="framework_extra_bundle.event.is_granted"/>
+          <argument>onKernelControllerArguments</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -3777,6 +3813,9 @@
         <argument type="service" id="doctrine.twig.doctrine_extension"/>
       </call>
       <call method="addExtension">
+        <argument type="service" id="twig.extension.stfalcon_tinymce"/>
+      </call>
+      <call method="addExtension">
         <argument type="service" id="assetic.twig_extension"/>
       </call>
       <call method="addExtension">
@@ -3876,12 +3915,12 @@
         <argument>!Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/var/www/html/Commercial/src/AppBundle/Resources/views</argument>
-        <argument>App</argument>
+        <argument>/var/www/html/Commercial/vendor/stfalcon/tinymce-bundle/Stfalcon/Bundle/TinymceBundle/Resources/views</argument>
+        <argument>StfalconTinymce</argument>
       </call>
       <call method="addPath">
-        <argument>/var/www/html/Commercial/src/AppBundle/Resources/views</argument>
-        <argument>!App</argument>
+        <argument>/var/www/html/Commercial/vendor/stfalcon/tinymce-bundle/Stfalcon/Bundle/TinymceBundle/Resources/views</argument>
+        <argument>!StfalconTinymce</argument>
       </call>
       <call method="addPath">
         <argument>/var/www/html/Commercial/app/Resources/FOSUserBundle/views</argument>
@@ -4064,12 +4103,12 @@
         <argument>!Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/var/www/html/Commercial/src/AppBundle/Resources/views</argument>
-        <argument>App</argument>
+        <argument>/var/www/html/Commercial/vendor/stfalcon/tinymce-bundle/Stfalcon/Bundle/TinymceBundle/Resources/views</argument>
+        <argument>StfalconTinymce</argument>
       </call>
       <call method="addPath">
-        <argument>/var/www/html/Commercial/src/AppBundle/Resources/views</argument>
-        <argument>!App</argument>
+        <argument>/var/www/html/Commercial/vendor/stfalcon/tinymce-bundle/Stfalcon/Bundle/TinymceBundle/Resources/views</argument>
+        <argument>!StfalconTinymce</argument>
       </call>
       <call method="addPath">
         <argument>/var/www/html/Commercial/app/Resources/FOSUserBundle/views</argument>
@@ -4679,10 +4718,7 @@
       <tag name="property_info.type_extractor" priority="-999"/>
       <argument type="service" id="doctrine.orm.default_entity_manager.metadata_factory"/>
     </service>
-    <service id="sensio_framework_extra.view.guesser" class="Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser" public="true">
-      <argument type="service" id="kernel"/>
-    </service>
-    <service id="sensio_framework_extra.controller.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener">
+    <service id="sensio_framework_extra.controller.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener" public="false">
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
       <argument type="service" id="annotations.cached_reader"/>
@@ -4701,7 +4737,7 @@
       <argument type="service" id="file_locator"/>
       <argument type="service" id="sensio_framework_extra.routing.loader.annot_class"/>
     </service>
-    <service id="sensio_framework_extra.converter.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener">
+    <service id="sensio_framework_extra.converter.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener" public="false">
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
       <argument type="service" id="sensio_framework_extra.converter.manager"/>
@@ -4714,39 +4750,60 @@
         <argument>doctrine.orm</argument>
       </call>
       <call method="add">
-        <argument type="service" id="sensio_framework_extra.converter.datetime"/>
+        <argument type="service" id="framework_extra_bundle.date_time_param_converter"/>
         <argument>0</argument>
         <argument>datetime</argument>
       </call>
     </service>
-    <service id="sensio_framework_extra.converter.doctrine.orm" class="Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter">
+    <service id="sensio_framework_extra.converter.doctrine.orm" class="Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter" public="false">
       <tag name="request.param_converter" converter="doctrine.orm"/>
       <argument type="service" id="doctrine" on-invalid="ignore"/>
+      <argument type="service" id="sensio_framework_extra.converter.doctrine.orm.expression_language.default" on-invalid="null"/>
     </service>
-    <service id="sensio_framework_extra.converter.datetime" class="Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter">
+    <service id="framework_extra_bundle.date_time_param_converter" class="Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter" public="false">
       <tag name="request.param_converter" converter="datetime"/>
     </service>
-    <service id="sensio_framework_extra.view.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener">
-      <tag name="kernel.event_subscriber"/>
-      <tag name="container.hot_path"/>
-      <argument type="service" id="service_container"/>
+    <service id="sensio_framework_extra.converter.doctrine.orm.expression_language.default" class="Symfony\Component\ExpressionLanguage\ExpressionLanguage" public="false"/>
+    <service id="sensio_framework_extra.view.guesser" class="Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser" public="false">
+      <argument type="service" id="kernel"/>
     </service>
-    <service id="sensio_framework_extra.cache.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener">
+    <service id="sensio_framework_extra.view.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener" public="false">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="container.hot_path"/>
+      <argument type="service" id="sensio_framework_extra.view.guesser"/>
+      <argument type="service" id="twig" on-invalid="null"/>
+    </service>
+    <service id="sensio_framework_extra.cache.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener" public="false">
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
       <tag name="container.hot_path"/>
     </service>
-    <service id="sensio_framework_extra.security.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener">
+    <service id="sensio_framework_extra.security.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener" public="false">
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
-      <argument>null</argument>
+      <argument type="service" id="framework_extra_bundle.argument_name_convertor"/>
       <argument type="service" id="sensio_framework_extra.security.expression_language.default" on-invalid="null"/>
       <argument type="service" id="security.authentication.trust_resolver" on-invalid="null"/>
       <argument type="service" id="security.role_hierarchy" on-invalid="null"/>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <argument type="service" id="security.authorization_checker" on-invalid="null"/>
+      <argument type="service" id="monolog.logger" on-invalid="null"/>
     </service>
     <service id="sensio_framework_extra.security.expression_language.default" class="Sensio\Bundle\FrameworkExtraBundle\Security\ExpressionLanguage" public="false"/>
+    <service id="framework_extra_bundle.event.is_granted" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener" public="false">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="container.hot_path"/>
+      <argument type="service" id="framework_extra_bundle.argument_name_convertor"/>
+      <argument type="service" id="security.authorization_checker" on-invalid="null"/>
+    </service>
+    <service id="framework_extra_bundle.argument_name_convertor" class="Sensio\Bundle\FrameworkExtraBundle\Request\ArgumentNameConverter" public="false">
+      <argument type="service" id="argument_metadata_factory"/>
+    </service>
+    <service id="twig.extension.stfalcon_tinymce" class="Stfalcon\Bundle\TinymceBundle\Twig\Extension\StfalconTinymceExtension">
+      <tag name="twig.extension" alias="stfalcon_tinymce"/>
+      <argument type="service" id="service_container"/>
+      <argument type="service" id="assets.packages"/>
+    </service>
     <service id="assetic.filter_manager" class="Symfony\Bundle\AsseticBundle\FilterManager">
       <argument type="service" id="service_container"/>
       <argument type="collection"/>
@@ -4782,6 +4839,10 @@
       </call>
       <call method="addResource">
         <argument type="service" id="assetic.twig_directory_resource.SensioFrameworkExtraBundle"/>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service" id="assetic.twig_directory_resource.StfalconTinymceBundle"/>
         <argument>twig</argument>
       </call>
       <call method="addResource">
@@ -5190,7 +5251,13 @@
     <service id="abstract.instanceof.AppBundle\Controller\AdminController" class="AppBundle\Controller\AdminController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" public="true" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id="service_locator.sr6ctxe" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\NewProductController" class="AppBundle\Controller\NewProductController" public="true" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Controller\NewProductController" class="AppBundle\Controller\NewProductController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="service_locator.mbnb9d0" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
+    <service id="service_locator.km4ot4q" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
@@ -5490,6 +5557,10 @@
       </call>
     </service>
     <service id="monolog.handler.null_internal" class="Monolog\Handler\NullHandler"/>
+    <service id="service_locator.sr6ctxe" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
     <service id="assetic.twig_directory_resource.FrameworkBundle" class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
       <tag name="assetic.templating.twig"/>
       <tag name="assetic.formula_resource" loader="twig"/>
@@ -5639,6 +5710,28 @@
             <argument type="service" id="templating.loader.filesystem"/>
             <argument>SensioFrameworkExtraBundle</argument>
             <argument>/var/www/html/Commercial/vendor/sensio/framework-extra-bundle/Resources/views</argument>
+            <argument>/\.[^.]+\.twig$/</argument>
+          </service>
+        </argument>
+      </argument>
+    </service>
+    <service id="assetic.twig_directory_resource.StfalconTinymceBundle" class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+      <tag name="assetic.templating.twig"/>
+      <tag name="assetic.formula_resource" loader="twig"/>
+      <argument type="collection">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource" public="false">
+            <argument type="service" id="templating.loader.filesystem"/>
+            <argument>StfalconTinymceBundle</argument>
+            <argument>/var/www/html/Commercial/app/Resources/StfalconTinymceBundle/views</argument>
+            <argument>/\.[^.]+\.twig$/</argument>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource" public="false">
+            <argument type="service" id="templating.loader.filesystem"/>
+            <argument>StfalconTinymceBundle</argument>
+            <argument>/var/www/html/Commercial/vendor/stfalcon/tinymce-bundle/Stfalcon/Bundle/TinymceBundle/Resources/views</argument>
             <argument>/\.[^.]+\.twig$/</argument>
           </service>
         </argument>
@@ -6080,6 +6173,7 @@
     <service id="doctrine.orm.default_result_cache" alias="doctrine_cache.providers.doctrine.orm.default_result_cache"/>
     <service id="doctrine.orm.default_query_cache" alias="doctrine_cache.providers.doctrine.orm.default_query_cache"/>
     <service id="doctrine.orm.default_entity_manager.event_manager" alias="doctrine.dbal.default_connection.event_manager" public="false"/>
+    <service id="sensio_framework_extra.converter.doctrine.orm.expression_language" alias="sensio_framework_extra.converter.doctrine.orm.expression_language.default" public="false"/>
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default" public="false"/>
     <service id="assetic.value_supplier" alias="assetic.value_supplier.default" public="false"/>
     <service id="fos_user.doctrine_registry" alias="doctrine" public="false"/>
