@@ -1,0 +1,139 @@
+{% extends "::header.html.twig" %}
+{% set page_title = 'Add new product' %}
+{% block content %}
+    {% set currentPath = path(app.request.attributes.get('_route'),
+    app.request.attributes.get('_route_params')) %}
+    {% set page_title = 'Add new product' %}
+    <div style="padding-top: 100px;">
+        <div class="container">
+            <label class="jumbotron">
+                {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                <div class="row">
+                    <div style="margin-bottom: 20px;">
+                        <div class="col-xs-3 col-md-2"
+                             style="margin-bottom: 20px;"> {{ 'Insert product name' | trans }} </div>
+                        <div class="col-xs-9 col-md-10" style="margin-bottom: 20px;">{{ form_widget(form.name) }}</div>
+                        <div class="col-xs-6 col-md-6" style="margin-bottom: 20px;"> {{ form_errors(form.name) }} </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div style="margin-bottom: 20px;">
+                        <div class="col-xs-3 col-md-2"
+                             style="margin-bottom: 20px;">{{ 'Insert product price' | trans }}</div>
+                        <div class="col-xs-9 col-md-10"
+                             style="margin-bottom: 20px;">{{ form_widget(form.price, {'attr': {
+                                'placeholder': "0.00",
+                                'value': "0.00" } }) }}</div>
+                        <div class="col-xs-6 col-md-6"
+                             style="margin-bottom: 20px;"> {{ form_errors(form.price) }} </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div style="margin-bottom: 20px;">
+                        <div class="col-xs-3 col-md-2"
+                             style="margin-bottom: 20px;">{{ 'Insert product price when bought' | trans }}</div>
+                        <div class="col-xs-9 col-md-10"
+                             style="margin-bottom: 20px;">{{ form_widget(form.boughtPrice, {'attr': {
+                                'placeholder': "0.00",
+                                'value': "0.00" } }) }}</div>
+                        <div class="col-xs-6 col-md-6"
+                             style="margin-bottom: 20px;">{{ form_errors(form.boughtPrice) }}</div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div style="margin-bottom: 20px;">
+                        <div class="col-xs-3 col-md-2"
+                             style="margin-bottom: 20px;">{{ 'Insert product quantity' | trans }} </div>
+                        <div class="col-xs-9 col-md-10"
+                             style="margin-bottom: 20px;">{{ form_widget(form.quantity) }}</div>
+                        <div class="col-xs-6 col-md-6"
+                             style="margin-bottom: 20px;">{{ form_errors(form.quantity) }}</div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div style="margin-bottom: 20px;">
+                        <div class="col-xs-3 col-md-2"
+                             style="margin-bottom: 20px;">{{ 'Product category' | trans }}</div>
+                        <div class="col-xs-9 col-md-10"
+                             style="margin-bottom: 20px;">{{ form_widget(form.category) }}</div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div style="margin-bottom: 20px;">
+                        <div class="col-xs-3 col-md-2"
+                             style="margin-bottom: 20px;"> {{ 'Insert product description' | trans }} </div>
+                        <div class="col-xs-9 col-md-10" style="margin-bottom: 20px;">{{ form_widget(form.description) }}</div>
+                        <div class="col-xs-6 col-md-6" style="margin-bottom: 20px;"> {{ form_errors(form.description) }} </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div style="margin-bottom: 20px;">
+                        <div class="col-xs-4 col-md-2"
+                             style="margin-bottom: 20px;">{{ 'Product is added by' | trans }}</div>
+                        <div class="col-xs-8 col-md-10"
+                             style="margin-bottom: 20px;">{{ form_widget(form.AddedBy, {'attr': {
+                                                                    'value': app.user.username }} ) }}</div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div style="margin-bottom: 20px;">
+                        <div class="col-xs-4 col-md-2" style="margin-bottom: 20px;"> {{ 'Date added' | trans }}</div>
+                        <div class="col-xs-8 col-md-10"
+                             style="margin-bottom: 20px;"> {{ form_widget(form.DateAdded) }}</div>
+                    </div>
+                </div>
+
+            <div style="padding-left: 75px">
+                <label class="btn btn-default btn-file" style="margin: 20px;">
+                    <img src="http://simpleicon.com/wp-content/uploads/cloud-upload-2.png" style="width:100px;height:100px;">
+                    {{ form_row(form.image1, {'label_attr': {'class': 'btn_upload'}}) }}
+                </label>
+
+                <label class="btn btn-default btn-file" style="margin: 20px;">
+                    <img src="http://simpleicon.com/wp-content/uploads/cloud-upload-2.png" style="width:100px;height:100px;">
+                    {{ form_row(form.image2, {'label_attr': {'class': 'btn_upload'}}) }}
+                </label>
+
+                <label class="btn btn-default btn-file" style="margin: 20px;">
+                    <img src="http://simpleicon.com/wp-content/uploads/cloud-upload-2.png" style="width:100px;height:100px;">
+                    {{ form_row(form.image3, {'label_attr': {'class': 'btn_upload'}}) }}
+                </label>
+
+                <label class="btn btn-default btn-file" style="margin: 20px;">
+                    <img src="http://simpleicon.com/wp-content/uploads/cloud-upload-2.png" style="width:100px;height:100px;">
+                    {{ form_row(form.image4, {'label_attr': {'class': 'btn_upload'}}) }}
+                </label>
+
+                <label class="btn btn-default btn-file" style="margin: 20px;">
+                    <img src="http://simpleicon.com/wp-content/uploads/cloud-upload-2.png" style="width:100px;height:100px;">
+                    {{ form_row(form.image5, {'label_attr': {'class': 'btn_upload'}}) }}
+                </label>
+            </div>
+
+                <div style="text-align: center">
+                    {{ form_widget(form.save) }}
+                    {{ form_widget(form.reset) }}
+                </div>
+
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
