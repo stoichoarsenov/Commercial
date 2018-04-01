@@ -158,10 +158,10 @@
                 <target>Уеб камери</target>
             </trans-unit>
 
-            <trans-unit id="add_new_product">
-                <source>Add new product</source>
-                <target>Добави нов продукт</target>
-            </trans-unit>
+            <!--<trans-unit id="add_new_product">-->
+                <!--<source>Add new product</source>-->
+                <!--<target>Добави нов продукт</target>-->
+            <!--</trans-unit>-->
 
             <trans-unit id="Image">
                 <source>Image</source>
@@ -171,6 +171,153 @@
             <trans-unit id="please_upload_image">
                 <source>Please, upload the product image.</source>
                 <target>Моля добавете изображение</target>
+            </trans-unit>
+
+            <trans-unit id="buy_now">
+                <source>Buy now</source>
+                <target>Купи сега</target>
+            </trans-unit>
+
+            <trans-unit id="products">
+                <source>Products</source>
+                <target>Продукти</target>
+            </trans-unit>
+
+            <trans-unit id="new_product">
+                <source>New product</source>
+                <target>Нов продукт</target>
+            </trans-unit>
+
+            <trans-unit id="New_Product">
+                <source>New Product</source>
+                <target>Нов продукт</target>
+            </trans-unit>
+
+            <trans-unit id="show_product">
+                <source>Show product</source>
+                <target>Покажи продукт</target>
+            </trans-unit>
+
+            <trans-unit id="edit_product">
+                <source>Edit product</source>
+                <target>Редактирай продукт</target>
+            </trans-unit>
+
+            <trans-unit id="accessories">
+                <source>Accessories</source>
+                <target>Аксесоари</target>
+            </trans-unit>
+
+            <trans-unit id="HDD_and_USB_flash_drives_external_HDD">
+                <source>HDD_and_USB_flash_drives_external_HDD</source>
+                <target>HDD и USB - външни хард дсикове</target>
+            </trans-unit>
+
+            <trans-unit id="HDD_and_USB_flash_drives_discs">
+                <source>HDD_and_USB_flash_drives_discs</source>
+                <target>HDD и USB- дискове</target>
+            </trans-unit>
+
+            <trans-unit id="HDD_and_USB_flash_drives_card_reader_usb_hubs">
+                <source>HDD_and_USB_flash_drives_card_reader_usb_hubs</source>
+                <target>HDD и USB - хъбове</target>
+            </trans-unit>
+
+            <trans-unit id="computer_peripherals_switch">
+                <source>computer_peripherals_switch</source>
+                <target>Компютърна периферия - Суичове</target>
+            </trans-unit>
+
+            <trans-unit id="computer_peripherals_routers">
+                <source>computer_peripherals_routers</source>
+                <target>Компютърна периферия - рутери</target>
+            </trans-unit>
+
+            <trans-unit id="computer_peripherals_keyboards">
+                <source>computer_peripherals_keyboards</source>
+                <target>Компютърна периферия - клавиатури</target>
+            </trans-unit>
+
+            <trans-unit id="HDD_and_USB_flash_drives_USB_flash">
+                <source>HDD_and_USB_flash_drives_USB_flash</source>
+                <target>HDD и USB Флаш-памет</target>
+            </trans-unit>
+
+            <trans-unit id="computer_peripherals_pc_headphones">
+                <source>computer_peripherals_pc_headphones</source>
+                <target>Аксесоари за лаптоп - слушалки</target>
+            </trans-unit>
+
+            <trans-unit id="computer_peripherals_pc_speakers">
+                <source>computer_peripherals_pc_speakers</source>
+                <target>Аксесоари за лаптоп - говорители</target>
+            </trans-unit>
+
+            <trans-unit id="computer_peripherals_web_cameras">
+                <source>computer_peripherals_web_cameras</source>
+                <target>Компютърна периферия - уеб камери</target>
+            </trans-unit>
+
+            <trans-unit id="computer_peripherals_mouse_and_pads">
+                <source>computer_peripherals_mouse_and_pads</source>
+                <target>Компютърна периферия - мишки и падове</target>
+            </trans-unit>
+
+            <trans-unit id="laptop_accessories_cables">
+                <source>laptop_accessories_cables</source>
+                <target>Аксесоари за лаптоп - кабели</target>
+            </trans-unit>
+
+            <trans-unit id="laptop_accessories_cooler">
+                <source>laptop_accessories_cooler</source>
+                <target>Аксесоари за лаптоп - охладители</target>
+            </trans-unit>
+
+            <trans-unit id="laptop_accessories_bags">
+                <source>laptop_accessories_bags</source>
+                <target>Аксесоари за лаптоп - чанти</target>
+            </trans-unit>
+
+            <trans-unit id="laptop_laptop_lenovo">
+                <source>laptop_laptop_lenovo</source>
+                <target>Лаптопи Lenovo</target>
+            </trans-unit>
+
+            <trans-unit id="laptop_laptop_toshiba">
+                <source>laptop_laptop_toshiba</source>
+                <target>Лаптопи Toshiba</target>
+            </trans-unit>
+
+            <trans-unit id="laptop_laptop_hp">
+                <source>laptop_laptop_hp</source>
+                <target>Лаптопи HP</target>
+            </trans-unit>
+
+            <trans-unit id="laptop_laptop_dell">
+                <source>laptop_laptop_dell</source>
+                <target>Лаптопи DELL</target>
+            </trans-unit>
+
+            <trans-unit id="laptop_laptop_asus">
+                <source>laptop_laptop_asus</source>
+                <target>Лаптопи Asus</target>
+            </trans-unit>
+
+            <trans-unit id="laptop_laptop_acer">
+                <source>laptop_laptop_acer</source>
+                <target>Лаптопи Acer</target>
+            </trans-unit>
+
+            <trans-unit id="laptop_laptop_apple">
+                <source>laptop_laptop_apple</source>
+                <target>Лаптопи Apple</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="promotional_price">
+                <source>Promotional price</source>
+                <target>Промоционална цена</target>
             </trans-unit>
 
         </body>

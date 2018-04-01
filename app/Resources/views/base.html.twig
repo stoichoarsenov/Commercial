@@ -48,7 +48,6 @@
         }
 
 
-
         .buttonLogin {
             background-color: #4CAF50;
             color: white;
@@ -63,6 +62,7 @@
             .checkbox {
                 margin-top: 15%;
             }
+
         }
 
         .btn-file {
@@ -98,6 +98,139 @@
             margin-top: 20px; /* space between content and footer */
             padding-top: 20px;
         }
+
+
+        /*
+        Задаване на параметри за бутончето Покажи продукт и цялостния дизайн на визуализацията на продукта
+        */
+        .buttonShowProduct{
+            background-image:none;
+            background-color:whitesmoke;
+            color: black;
+            border: 1px solid #333;
+            font-family: 'Open Sans', sans-serif;
+
+        }
+
+        .buttonShowProduct:hover{
+            background-image:none;
+            color: white;
+            border: 1px solid #333;
+            font-weight: 800;
+        }
+
+        .product {
+            display: inline-table;
+            vertical-align: top;
+            width: 350px;
+            height: 385px; /* controls the space of the .name div*/
+            margin-left: 5%;
+            margin-top: 5%;
+            border: 1px solid rgba(0,0,0,0.1);
+            background: #fff;
+            font-weight: bold;
+
+        }
+        .product:hover{
+            transform: scale(1.2);
+            transition: transform .2s;
+        }
+        .image,.name,.buy {
+            display: table-row;
+            text-align: center;
+        }
+        .product span {
+            display: block;
+            padding: 4px;
+        }
+
+        .image {
+            height: 300px;
+            text-align: center;
+            word-spacing: -1em;
+        }
+
+        .image::before,
+        .image img {
+            display: inline-block;
+            vertical-align: middle; /* or 'top' or 'bottom' */
+        }
+        .image::before {
+            content:"";
+            height: 200px;
+            width: 0;
+        }
+        .image img {
+            margin: 0 auto;
+            word-spacing: normal; /* reset for img alt text */
+        }
+
+        img.lrg {width: 340px; height: 340px}
+
+
+        .name { /*allows for wrapping text without a table min-height*/
+            background: wheat;
+        }
+        .name span {
+            padding: 20px 20px 20px;
+            font-weight: 800;
+        }
+        .buy {
+            height: 1px;
+        }
+        .buy span {
+            padding: 4px;
+        }
+        /*
+
+        До тук се описва бутона за лаптоп а отдолу се описва за телефон
+         */
+        @media only screen and (max-width: 600px) {
+            .image {
+                height: 150px;
+                width: 150px;
+            }
+
+            .product {
+                margin-left: 15%;
+                margin-right: 15%;
+                margin-bottom: 5%;
+                display: inline-table;
+                vertical-align: top;
+                width: 70%;
+                height: 90%; /* controls the space of the .name div*/
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                background: #fff;
+                font-weight: bold;
+
+            }
+
+            .product:hover {
+                transform: scale(1.2);
+                transition: transform .2s;
+            }
+
+            img.lrg {
+                width: 130px;
+                height: 130px
+            }
+
+            .image::before {
+                content: "";
+                height: 100px;
+                width: 0;
+            }
+
+            .name span {
+                padding: 20px 20px 20px;
+                font-weight: 300;
+            }
+        }
+
+            /*
+            Приключване на описването на продуктите 
+             */
+
 
         .footer-col { margin-top:50px; }
         .logofooter { margin-bottom:10px; font-size:25px; color:#fff; font-weight:700;}
@@ -150,6 +283,215 @@
             background-color:#f63e28;
         }
 
+
+        .row > .column {
+            padding: 0 8px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .column {
+            float: left;
+            width: 20%;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            margin-top:50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: black;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            width: 90%;
+            max-width: 40%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .cursor {
+            cursor: pointer
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: #337ab7;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        img {
+            margin-bottom: -4px;
+        }
+
+        .caption-container {
+            text-align: center;
+            background-color: black;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        .demo {
+            opacity: 0.6;
+        }
+
+        .active,
+        .demo:hover {
+            opacity: 1;
+        }
+
+        img.hover-shadow {
+            transition: 0.3s
+        }
+
+        .hover-shadow:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+        }
+
+        .product-description,
+        .moreLines li{
+            display: block;
+        }
+        .product-description,
+        .moreLines li:before{
+            content:"\e013";
+            font-family: 'Glyphicons Halflings';
+            font-size: 9px;
+            float: left;
+            margin-top: 4px;
+            margin-left: -17px;
+            color: red;
+        }
+
+        .buyNowButton {
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            padding: 12px 24px;
+            border: 1px solid #a12727;
+            border-radius: 8px;
+            background: #ff4a4a;
+            background: -webkit-gradient(linear, left top, left bottom, from(#ff4a4a), to(#992727));
+            background: -moz-linear-gradient(top, #ff4a4a, #992727);
+            background: linear-gradient(to bottom, #ff4a4a, #992727);
+            text-shadow: #591717 1px 1px 1px;
+            font: normal normal bold 20px arial;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .buyNowButton:hover,
+        .buyNowButton:focus {
+            background: #ff5959;
+            background: -webkit-gradient(linear, left top, left bottom, from(#ff5959), to(#b62f2f));
+            background: -moz-linear-gradient(top, #ff5959, #b62f2f);
+            background: linear-gradient(to bottom, #ff5959, #b62f2f);
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .buyNowButton:active {
+            background: #982727;
+            background: -webkit-gradient(linear, left top, left bottom, from(#982727), to(#982727));
+            background: -moz-linear-gradient(top, #982727, #982727);
+            background: linear-gradient(to bottom, #982727, #982727);
+        }
+        .buyNowButton:before{
+            content:  "\0000a0";
+            display: inline-block;
+            height: 24px;
+            width: 24px;
+            line-height: 24px;
+            margin: 0 4px -6px -4px;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACuUlEQVRIibWVQWhUZxSFvzPzIhhMGYIJIcjMmKkJKqLLtKUbC3HduiuFKl1JV93YXSiEKq4FRTdG20WWIaFQ3LhpN0Uh2JKF8IY3Uxc12EkCIYsmeaeLmby8mbzJDIh3dbn/vfe8c/777i/6tLNnJtnb2zuWz+fH4jjePj442NhYb8TR69dH1qmf5pVSGeAr4EfbRWBX0qrtB5Lmge2wFr0TwAzmF0QAYIMEGBCrwNfA8yyQngCVUhnD7zIf02z6D+JnwxuZM4gZYBS4avvXar3WVh/0QWAUM91q3gA+AqJqLWpKZ44ZvpC4DdSB1XRxrld3m3MSOTflWEBEQK5SLBPWIsJ69J/Egs1nwOWlxcX+GEwUS9OSYmASmpobBoG7mGXgaTpfojE2Pv4wrFZzQJzEjwA4Iek+5suEaTP7W+Be64IDYNgwAxQEge2LJ0dG5v548byaKVGlVKZSKiNpC/imJUtTLlgznAeWEX8Cb2z+Bn4SXAD+kvT9tevXq4cYPJl/nPthdvYm0mmgKJgATtGUpbeZT8N69FtnOAGwzYfl0yEwgXv1OihMfDEV1qJXnbmJRFtbWwAr3q/Y75DhK8uHRtbHJABDQ0MAL5S+9v79XWAjC6BtTG2vSGpbBabd72INid2eAJJWMLF0wCzNSIeET/y33ZDbxtRmzXCwf/uUyGatG0AHA3YxN2gur8xxMaC0DwXgk74AgBziBCZIpic9VT6YGjsJfXCURJ0AMfAWsd3JILl4EqAc4nNMQWYurEeZAJm7aKJYPiUxB4SYW2E9itPnrRfups2dVpOnFleqGQ9O5jYV3ACutRgsAS8z0qZSr9pkt62ZzwoOFwprQRBcMn4GPFrf3NhLn69vbjBcKKxImsoHwb+O4++A6vrm4X+t67re2dkBYGBgoFtKkhMEAVLXVu/X/gf92/xZjLRBWwAAAABJRU5ErkJggg==") no-repeat left center transparent;
+            background-size: 100% 100%;
+        }
+
+
+        @media only screen and (max-width: 600px) {
+            .modal-content {
+                position: relative;
+                background-color: #fefefe;
+                margin: auto;
+                padding: 0;
+                width: 90%;
+                max-width: 80%;
+            }
+
+            hr{
+                display: none;
+            }
+
+        }
 
 
     </style>

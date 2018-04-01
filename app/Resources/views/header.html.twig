@@ -13,7 +13,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">WebSiteName</a>
+                <a href="#">
+                    <img src="/logo.png" height="25%" width="100px">
+                </a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
@@ -34,22 +36,22 @@
                         {% endif %}
                     {% endif %}
                     {% if is_granted("ROLE_ADMIN") %}
-                        {% if 'newProduct' in app.request.get('_route') %}
+                        {% if 'Product' in app.request.get('_route') %}
                             <li class="active">
-                                <a href="" data-toggle="dropdown">Product</a>
+                                <a href="" data-toggle="dropdown">{{ "Products" | trans }}</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href={{ path('newProduct') }}>New Product</a></li>
-                                    <li><a href="#">Edit product</a></li>
-                                    <li><a href="#">Show product</a></li>
+                                    <li><a href={{ path('newProduct') }}>{{ "New product" | trans }}</a></li>
+                                    <li><a href="#">{{ "Edit product" | trans }}</a></li>
+                                    <li><a href={{ path('showProduct') }}>{{ "Show product" | trans }}</a></li>
                                 </ul>
                             </li>
                         {% else %}
                             <li>
-                                <a href="" data-toggle="dropdown">Product</a>
+                                <a href="" data-toggle="dropdown">{{ "Products" | trans }}</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href={{ path('newProduct') }}>New Product</a></li>
-                                    <li><a href="#">Edit product</a></li>
-                                    <li><a href="#">Show product</a></li>
+                                    <li><a href={{ path('newProduct') }}>{{ "New Product" | trans }}</a></li>
+                                    <li><a href="#">{{ "Edit product" | trans }}</a></li>
+                                    <li><a href={{ path('showProduct') }}>{{ "Show product" | trans }}</a></li>
                                 </ul>
                             </li>
                         {% endif %}{% endif %}

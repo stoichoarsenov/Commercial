@@ -338,6 +338,11 @@
                 <target>Моля добавете изображение</target>
             </trans-unit>
 
+            <trans-unit id="buy_now">
+                <source>Buy now</source>
+                <target>Купи сега</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>

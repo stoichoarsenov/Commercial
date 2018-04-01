@@ -9,7 +9,6 @@
 
 namespace AppBundle\Controller;
 
-use GuzzleHttp\Psr7\UploadedFile;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -26,14 +25,14 @@ use AppBundle\Entity\NewProduct;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
-//use Symfony\Component\Validator\Constraints\Valid;
-//use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 
 class NewProductController extends Controller
 {
     /**
-     * @Route("/product/new", name="newProduct")
+     * @Route("{_locale}/product/new", name="newProduct")
+     * requirements={
+     *         "_locale": "en|bg",}
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -84,13 +83,13 @@ class NewProductController extends Controller
             ->add('category', ChoiceType::class, array(
                 'choices' => array(
                     'Laptops' => array(
-                        'Acer' => 'laptop_acer',
-                        'Apple' => 'laptop_apple',
-                        'Asus' => 'laptop_asus',
-                        'Dell' => 'laptop_dell',
-                        'HP' => 'laptop_hp',
-                        'Lenovo' => 'laptop_lenovo',
-                        'Toshiba' => 'laptop_toshiba',
+                        'Acer' => 'laptop_laptop_acer',
+                        'Apple' => 'laptop_laptop_apple',
+                        'Asus' => 'laptop_laptop_asus',
+                        'Dell' => 'laptop_laptop_dell',
+                        'HP' => 'laptop_laptop_hp',
+                        'Lenovo' => 'laptop_laptop_lenovo',
+                        'Toshiba' => 'laptop_laptop_toshiba',
                     ),
                     'Laptop accessories' => array(
                         'Laptop bags' => 'laptop_accessories_bags',

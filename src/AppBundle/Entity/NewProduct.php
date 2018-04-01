@@ -62,14 +62,14 @@ class NewProduct
     private $quantity;
 
     /**
-     * @var string
+     * @var text
      * @Assert\Length(
      *      min = 2,
-     *      max = 1500,
+     *      max = 3500,
      *      minMessage = "Product description must be at least {{ limit }} characters long.",
      *      maxMessage = "Product description cannot be longer than {{ limit }} characters."
      * )
-     * @ORM\Column(name="description", type="string", length=1500)
+     * @ORM\Column(name="description", type="text", length=3500)
      */
     private $description;
 
