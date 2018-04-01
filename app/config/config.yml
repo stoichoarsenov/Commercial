@@ -54,6 +54,8 @@ twig:
     strict_variables: '%kernel.debug%'
     form_themes:
     - 'bootstrap_3_layout.html.twig'
+    globals:
+      image_directory: '%kernel.project_dir%/web/uploads/images'
 
 # Doctrine Configuration
 doctrine:
