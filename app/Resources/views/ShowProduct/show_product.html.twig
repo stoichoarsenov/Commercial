@@ -1,0 +1,112 @@
+{% extends "::header.html.twig" %}
+
+
+{% block content %}
+    {% set currentPath = path(app.request.attributes.get('_route'),
+    app.request.attributes.get('_route_params')) %}
+    {% set page_title = 'show new product' %}
+    <div style="padding-top: 100px"></div>
+    <div style="border-bottom: 4px solid red; text-align: center; width: 80%; margin-left: 10%;"><h1>{{ "Laptops" | trans }}</h1></div>
+
+    {% for product in products if "laptop_laptop" in product.category %}
+        {% if loop.index < 5 %}
+            <div class="product">
+                {% if is_granted("ROLE_ADMIN") %}
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <span class="glyphicon glyphicon-pencil"></span> Edit
+                    </button>
+                {% endif %}
+                <div class="image">
+                    <img src="/uploads/images/{{ product.image1 }}" alt="{{ product.name }}" class="lrg">
+                </div>
+                <div class="name">
+                    <span>{{ product.name }}</span>
+                </div>
+                <div class="buy buttonShowProduct">
+        <span>
+        <a href="{{ path('showExactProduct' , {'id' : product.id }) }}">{{ "Buy now" | trans }}</a>
+        </span>
+                </div>
+            </div>
+
+        {% endif %}
+    {% endfor %}
+
+    <div style="padding-top:5%;border-bottom: 5px solid red; text-align: center;width: 80%; margin-left: 10%;"><h1>{{ "Accessories" | trans }}</h1></div>
+
+    {% for product in products if "laptop_accessories_bags" in product.category %}
+        {% if loop.index < 5 %}
+            <div class="product">
+                {% if is_granted("ROLE_ADMIN") %}
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <span class="glyphicon glyphicon-pencil"></span> Edit
+                    </button>
+                {% endif %}
+                <div class="image">
+                    <img src="/uploads/images/{{ product.image1 }}" alt="{{ product.name }}" class="lrg">
+                </div>
+                <div class="name">
+                    <span>{{ product.name }}</span>
+                </div>
+                <div class="buy buttonShowProduct">
+        <span>
+        <a href="{{ path('showExactProduct' , {'id' : product.id }) }}">{{ "Buy now" | trans }}</a>
+        </span>
+                </div>
+            </div>
+
+        {% endif %}
+    {% endfor %}
+
+
+    {% for product in products if "computer_peripherals" in product.category %}
+        <div style="padding-top:5%;border-bottom: 5px solid red; text-align: center;"><h1>{{ "Accessories" | trans }}</h1></div>
+
+        {% if loop.index < 5 %}
+            <div class="product">
+                {% if is_granted("ROLE_ADMIN") %}
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <span class="glyphicon glyphicon-pencil"></span> Edit
+                    </button>
+                {% endif %}
+                <div class="image">
+                    <img src="/uploads/images/{{ product.image1 }}" alt="{{ product.name }}" class="lrg">
+                </div>
+                <div class="name">
+                    <span>{{ product.name }}</span>
+                </div>
+                <div class="buy buttonShowProduct">
+        <span>
+        <a href="{{ path('showExactProduct' , {'id' : product.id }) }}">{{ "Buy now" | trans }}</a>
+        </span>
+                </div>
+            </div>
+
+        {% endif %}
+    {% endfor %}
+
+    <br>
+    {% for product in products if "HDD_and_USB_flash" in product.category %}
+        {% if loop.index < 5 %}
+            <div class="product">
+                {% if is_granted("ROLE_ADMIN") %}
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <span class="glyphicon glyphicon-pencil"></span> Edit
+                    </button>
+                {% endif %}
+                <div class="image">
+                    <img src="/uploads/images/{{ product.image1 }}" alt="{{ product.name }}" class="lrg">
+                </div>
+                <div class="name">
+                    <span>{{ product.name }}</span>
+                </div>
+                <div class="buy buttonShowProduct">
+        <span>
+        <a href="{{ path('showExactProduct' , {'id' : product.id }) }}">{{ "Buy now" | trans }}</a>
+        </span>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}
